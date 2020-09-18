@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ThemeProvider from './context/themeContext'
+import CheckTheme from './Component/CheckTheme'
+import ToggleTheme from './Component/ToggleTheme'
+import CheckAuth from './Component/CheckAuth';
+import AuthContextProvider from './context/AuthContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider>
+        <AuthContextProvider>
+          <CheckTheme />
+          <ToggleTheme />
+          <CheckAuth />
+        </AuthContextProvider>
+      </ThemeProvider>
     </div>
   );
 }
