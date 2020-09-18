@@ -13,8 +13,6 @@ class CheckAuth extends React.Component {
                             const { user, toggleAuth } = authContext
                             const { isLightTheme, light, dark } = themeContext
                             const theme = isLightTheme ? light : dark
-
-                            console.log(user)
                             return (
                                 <React.Fragment>
                                     <div style={{ background: theme.ui, color: theme.syntax }}>
