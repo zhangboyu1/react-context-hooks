@@ -9,17 +9,13 @@ class CheckAuth extends React.Component {
             <ThemeContext.Consumer>
                 {(themeContext) => (
                     <AuthContext.Consumer>
-                        {(authContext) => {
-                            const { user, toggleAuth } = authContext
-                            const { isLightTheme, light, dark } = themeContext
-                            const theme = isLightTheme ? light : dark
+                        {(authcontext) => {
+                            const { user, toggleAuth } = authcontext
+                            console.log(user)
                             return (
                                 <React.Fragment>
-                                    <div style={{ background: theme.ui, color: theme.syntax }}>
-                                        <h1 >userid:{user.id}</h1>
-                                        <h1>activation:{user.activation}</h1>
-                                    </div>
-
+                                    <h1>userid:{user.id}</h1>
+                                    <h1>activation:{user.activation}</h1>
                                     <button onClick={toggleAuth}>toggleAuth</button>
                                 </React.Fragment>
                             )
